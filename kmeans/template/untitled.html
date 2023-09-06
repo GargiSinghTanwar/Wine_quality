@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<title>Machine Learning Lab Experiment Deployment</title>
+<meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+<style><!DOCTYPE html>
+
+h1 {text-align: center;}
+h2 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+
+<body>
+ 
+     
+<div class="" style="background-color:blue;" >
+<div class="clearfix">
+           
+</div>
+</div>
+
+<div class="login">
+<h2 >K Means clustering </h2>
+
+<!-- Main Input For Receiving Query to our ML -->
+<form action="{{ url_for('predict')}}" method="get">
+
+ 
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">sulphates</label>
+      <input type="number" name="sulphates" id="sulphates"  placeholder="" required="required">
+      </div>
+      <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">alcohol</label>
+      <input type="number"  name="alcohol" id="alcohol" placeholder="1" required="required">
+      </div>
+  
+  <div class="col-auto">
+ 
+    <button type="submit" value="predict" name="predict" class="btn btn-danger">predict type of Customer</button>
+  </div>
+</form>
+
+<br>
+<br>
+{{ prediction_text }}
+
+</div>
+
+<div class="" style="background-color:blue;" >
+<div class="clearfix">
+           
+<div class="col-md-12">
+
+</div>
+</div>
+</div>
+</body>
+</html>

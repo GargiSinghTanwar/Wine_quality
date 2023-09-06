@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<title>Machine Learning Lab Experiment Deployment</title>
+<meta charset="UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+<style><!DOCTYPE html>
+
+h1 {text-align: center;}
+h2 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+
+<body>
+ 
+<div class="login">
+<br><br>
+<h2 >K Means clustering </h2>
+
+<hr>
+<br>
+
+<p>
+Performing hierarchical clustering from scikit-learn. <br>
+The code you provided first fits the hierarchical clustering model to the dataset and prints the 
+resulting cluster assignments on the basis of presence of sulphates and alcohol in wine. <br>
+This include input three new data points (sulphates, alcohol), (sulphates1, alcohol1), and (sulphates2, alcohol2), 
+and you are trying to predict the cluster assignments for these new data points using the fitted model.
+<br>
+sulphate include decimal values lies between 0-2
+<br>
+alcohol include decimal values lies between 9-12
+<p>
+<!-- Main Input For Receiving Query to our ML -->
+<form action="{{ url_for('predict')}}"method="get">
+
+ 
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">sulphates</label>
+      <input type="float" name="sulphates" id="sulphates" required="required">
+      </div>
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">alcohol</label>
+      <input type="float"  name="alcohol" id="alcohol" required="required">
+      </div>
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">sulphates1</label>
+      <input type="float" name="sulphates1" id="sulphates1" required="required">
+      </div>
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">alcohol1</label>
+      <input type="float"  name="alcohol1" id="alcohol1" required="required">
+      </div>
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">sulphates2</label>
+      <input type="float" name="sulphates2" id="sulphates2" required="required">
+      </div>
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">alcohol2</label>
+      <input type="float"  name="alcohol2" id="alcohol2"  required="required">
+      </div>
+       
+  <div class="col-auto">
+ 
+    <button type="submit" class="btn btn-danger">predict type of Customer</button>
+  </div>
+</form>
+
+<br>
+<br>
+{{ prediction_text }}
+
+</div>
+
+<div class="" style="background-color:blue;" >
+<div class="clearfix">
+           
+<div class="col-md-12">
+ <center><p style="font-size:25px;color:white;margin-top:20px;"> Hierarchical clustering </p></center> 
+</div>
+</div>
+</div>
+</body>
+</html>

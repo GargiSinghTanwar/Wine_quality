@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <title>Machine Learning Lab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        h2,
+        h4 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color: rgb(4, 9, 56);
+
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            color: rgb(4, 9, 56);
+            font-size: 20px;
+            font-style: italic;
+            text-decoration: double;
+        }
+
+        .button {
+            width: 200px;
+            margin-top: 15px;
+        }
+
+        .navbar {
+            text-align: center;
+            width: 100px;
+
+        }
+
+        .a {
+            color: rgb(254, 253, 253);
+            padding: 3px;
+            padding-left: 35px;
+            font-size: 25px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .nav_image {
+            height: 230px;
+            width: 700px;
+            margin-left: 400px;
+        }
+
+        .navbar_a {
+            width: 1500px;
+            height: 50px;
+            background-color: rgb(184, 7, 7);
+
+        }
+
+        .col-1 {
+            width: 1500px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .col-2 {
+            width: 1500px;
+        }
+
+        .col-3 {
+            text-align: left;
+            height: 300px;
+            padding: 30px;
+        }
+
+        .col-4 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: justify;
+            margin-right: 50px;
+        }
+
+        .col-5 {
+            margin-left: 160px;
+            font-size: 30px;
+        }
+
+        .col-6 {
+            width: 1500px;
+        }
+
+        .col-7 {
+            background-image:url({{ url_for('static',filename = 'image/𝐖𝐎𝐍𝐃𝐄𝐑𝐖𝐀𝐋𝐋 ; bakugō katsuki.gif')}});
+            background-repeat: no-repeat;
+            background-size: 1000px 600px;
+            background-position-x: left;
+            margin-left: 270px;
+            width: 1500px;
+        }
+
+        .col-8 {
+            padding: 0px;
+            width: 800px;
+            height: 700px;
+            padding: 30px;
+        }
+
+        .col-9 {
+            text-align: left;
+            font-size: 20px;
+
+        }
+
+        .col-10 {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            width: 600px;
+        }
+
+        .col-11 {
+            list-style-type: none;
+        }
+
+        .col-12 {
+            color: rgb(5, 4, 4);
+            margin-left: 20px;
+            width: 450px;
+            height: 30px;
+        }
+
+        .form-label {
+            margin-left: 20px;
+            color: rgb(2, 2, 2);
+        }
+
+        .form-select {
+            border-radius:6px;
+            width: 450px;
+            margin-left: 20px;
+            margin-top: 10px;
+            padding: 5px;
+            border-style: solid;
+            background-color: rgb(238, 237, 237);
+            border-color: white;
+        }
+
+        .col-foot-12 {
+            width: 1500px;
+
+        }
+
+        .col-foot-img {
+            padding-left: 100px;
+            margin-left: 220px;
+        }
+
+
+        @media only screen and (min-width:300px) and (max-width:2000px) {
+
+            .navbar {
+                display: block;
+            }
+
+            .a {
+                display: block;
+            }
+
+            .nav_image {
+                display: block;
+            }
+
+            .navbar_a {
+                display: flex;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+
+            [class*="col-"] {
+                float: left;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="col-1">
+        <div style="margin-top:30px;">
+            <h2 style="font-size: 40px;">
+                Summer Internship Project
+            </h2>
+            <p style="font-size: 30px;">
+                This project based on Wine Quality prediction with Random forest models
+            </p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-2">
+                            <br><br>
+                        </th>
+                    </tr>
+
+                    <tr class="col-6">
+                        <th>
+
+                            <table class="col-7">
+                                <tr>
+                                    <th>
+                                        <form action="{{ url_for('predict')}} " method="get" class="col-9">
+
+                                            <div>
+                                                <p style="font-size:40px;">Fill this form</p>
+                                            </div>
+
+                                            <table class="col-11">
+                                                <th>
+                                                <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">fixed_acidity</label><br>
+                                                        <input type="text" class="form-select" id="fixed_acidity" name="fixed_acidity"
+                                                            step="any" required="required" placeholder="Enter fixed_acidity">
+
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">volatile_acidity</label><br>
+                                                        <input type="text" class="form-select" id="volatile_acidity" name="volatile_acidity"
+                                                            step="any" required="required" placeholder="Enter volatile_acidity">
+                                                    </li>
+                      
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">citric_acid </label><br>
+                                                        <input type="text" class="form-select" id="citric_acid" name="citric_acid"
+                                                            step="any" required="required" placeholder="Enter citric_acid">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">residual_sugar </label><br>
+                                                        <input type="text" class="form-select" id="residual_sugar" name="residual_sugar"
+                                                            step="any" required="required" placeholder="Enter residual_sugar">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">chlorides </label><br>
+                                                        <input type="text" class="form-select" id="chlorides" name="chlorides"
+                                                            step="any" required="required" placeholder="Enter chlorides">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">free_sulfur_dioxide</label><br>
+                                                        <input type="text" class="form-select" id="free_sulfur_dioxide" name="free_sulfur_dioxide"
+                                                            step="any" required="required" placeholder="Enter free_sulfur_dioxide">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">total_sulfur_dioxide</label><br>
+                                                        <input type="text" class="form-select" id="total_sulfur_dioxide" name="total_sulfur_dioxide"
+                                                            step="any" required="required" placeholder="Enter total_sulfur_dioxide">
+                                                    </li>
+                                                </th>
+                                                <th>
+                                                    
+                             
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">density</label><br>
+                                                        <input type="text" class="form-select" id="density" name="density"
+                                                            step="any" required="required" placeholder="Enter density">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">pH</label><br>
+                                                        <input type="text" class="form-select" id="pH" name="pH"
+                                                            step="any" required="required" placeholder="Enter pH">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">sulphates</label><br>
+                                                        <input type="text" class="form-select" id="sulphates" name="sulphates"
+                                                            step="any" required="required" placeholder="Enter sulphates">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput" class="form-label">alcohol</label><br>
+                                                        <input type="text" class="form-select" id="alcohol" name="alcohol"
+                                                            step="any" required="required" placeholder="Enter alcohol">
+                                                    </li>
+                                                    <br>
+                                                    <li>
+                                                        <label for="floatingInput"
+                                                            class="form-label">Choose_model</label><br>
+                                                        <select id="Model" name="Model" step="any" class="form-select"
+                                                            required>
+                                                            <option value="Random_Forest">Random_Forest</option>
+                                                            
+                                                        </select>
+                                                    </li>
+                                                    <br>
+                                                    <li><label class="form-label">Click here</label><br>
+                                                        <button type="submit" value="predict" name="predict"
+                                                            class="col-12" style="border-radius:10px;border-color: white; background-color: rgb(150, 2, 2); color: white;">predict</button>
+                                                    </li>
+                                                </th>
+                                        </form>
+                                    </th>
+                                </tr>
+                            </table>
+
+                            <div >
+                                <p style="color:rgb(4, 4, 4);">
+                                    {{prediction_text}}
+                                    {{extra_text}}
+                                </p>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+
+
+                <br><br><br><br><br><br><br>
+                </th>
+                </tr>
+
+                </table>
+            </div>
+
+        </div>
+        <br>
+
+
+</body>
+
+</html>
